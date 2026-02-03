@@ -1,7 +1,7 @@
 # Rarenal Dev - Component Development Rules
 
 ## Project Overview
-React 19 + TypeScript + Vite project with CSS Modules for styling.
+React 18 + TypeScript + Vite project with CSS Modules for styling.
 
 ## File Structure
 - Components in `src/components/`
