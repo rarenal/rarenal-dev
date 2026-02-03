@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 85vh;
+  padding: 2rem;
+  background-color: #1e2433;
+}
+
+.title {
+  font-size: clamp(1.75rem, 6vw, 3rem);
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #e2e8f0;
+}
+
+.content {
+  max-width: 800px;
+  width: 100%;
+}
+
+.text {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.8;
+  color: #cbd5e0;
+  text-align: center;
+}

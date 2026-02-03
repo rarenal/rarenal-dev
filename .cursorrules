@@ -1,0 +1,135 @@
+# Rarenal Dev - Component Development Rules
+
+## Project Overview
+React 18 + TypeScript + Vite project with CSS Modules for styling.
+
+## File Structure
+- Components in `src/components/`
+- One component per file
+- Co-locate component styles: `ComponentName.module.css`
+- Organize related components in subdirectories when needed
+
+## Naming Conventions
+- **Components**: PascalCase (e.g., `Button.tsx`, `UserProfile.tsx`)
+- **Files**: Match component name (e.g., `Button.tsx`)
+- **CSS Modules**: Match component name (e.g., `Button.module.css`)
+- **Functions/Variables**: camelCase (e.g., `handleClick`, `userData`)
+- **Constants**: UPPER_SNAKE_CASE (e.g., `API_URL`, `MAX_ITEMS`)
+- **Interfaces/Types**: PascalCase with descriptive names (e.g., `ButtonProps`, `User`)
+- **Custom Hooks**: Prefix with "use" (e.g., `useAuth`, `useFetch`)
+
+## TypeScript Guidelines
+- Use TypeScript strict mode (already enabled)
+- Define interfaces for all component props
+- Prefer `interface` over `type` for object shapes
+- Use `type` for unions, intersections, and primitives
+- Avoid `any` - use `unknown` if type is truly unknown
+- Export prop interfaces when they might be reused
+
+## React Guidelines
+- Use function components
+- Function components are exported directly like `export const Component = (props: ComponentProps) => {}`
+- Don't use default exports.
+
+## Component Structure
+```tsx
+import styles from './ComponentName.module.css'
+
+interface ComponentNameProps {
+  // Props with JSDoc comments for complex ones
+  title: string
+  onAction?: () => void
+}
+
+export const ComponentName = ({ title, onAction }: ComponentNameProps) => {
+  // Hooks first
+  // Event handlers
+  // Other logic
+  
+  return (
+    <div className={styles.container}>
+      {/* Component JSX */}
+    </div>
+  )
+}
+```
+
+## Code Style
+- Use functional components with hooks (no class components)
+- Destructure props in function parameters
+- Use arrow functions for event handlers
+- Keep components focused and single-responsibility
+- Extract complex logic into custom hooks
+- Prefer early returns for conditional rendering
+
+## Import Order
+1. React imports
+2. Third-party library imports
+3. Local component imports
+4. Type/interface imports (if not inline)
+5. CSS Module imports (always last)
+
+Example:
+```tsx
+import { useState, useEffect } from 'react'
+import { someLibrary } from 'some-package'
+import Button from '../Button/Button'
+import type { User } from '../../types'
+import styles from './Component.module.css'
+```
+
+## CSS Modules
+- Use CSS Modules for all component styling
+- Import as: `import styles from './Component.module.css'`
+- Use semantic class names (e.g., `container`, `title`, `primaryButton`)
+- Prefer composition over deeply nested selectors
+- Keep global styles in `src/index.css`
+
+## State Management
+- Use `useState` for local component state
+- Lift state up when needed by multiple components
+- Keep state as close as possible to where it's used
+
+## Props Best Practices
+- Provide default values using destructuring or default parameters
+- Make optional props explicitly optional with `?`
+- Use descriptive prop names
+- Avoid boolean props starting with "is/has" when the component name already implies it
+- Pass event handlers with `onEventName` convention
+
+## Performance
+- Use `React.memo()` only when necessary (measure first)
+- Memoize expensive calculations with `useMemo`
+- Memoize callbacks passed to child components with `useCallback`
+- Avoid inline object/array creation in render when passed as props
+
+## Accessibility
+- Use semantic HTML elements
+- Include ARIA labels when needed
+- Ensure keyboard navigation works
+- Maintain proper heading hierarchy
+- Add alt text to images
+
+## Comments & Documentation
+- Write self-documenting code with clear names
+- Add JSDoc comments for complex functions/components
+- Comment "why" not "what"
+- Document non-obvious behavior or workarounds
+
+## Error Handling
+- Handle errors gracefully
+- Provide user-friendly error messages
+- Use error boundaries for component error handling
+- Validate props when necessary
+
+## Testing (when implemented)
+- Write tests for business logic
+- Test user interactions, not implementation details
+- Use meaningful test descriptions
+
+## General Principles
+- Keep it simple (KISS)
+- Don't repeat yourself (DRY)
+- Make it work, then make it better
+- Prioritize readability over cleverness
+- Follow the existing project patterns

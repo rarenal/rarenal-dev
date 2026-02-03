@@ -1,12 +1,16 @@
+import { WelcomeBanner } from './components/WelcomeBanner/WelcomeBanner'
+import { Presentation } from './components/Presentation/Presentation'
+import { TechPool } from './components/TechPool/TechPool'
+import { Contact } from './components/Contact/Contact'
 import styles from './App.module.css'
 
-function App() {
+export const App = () => {
   return (
-    <div className={styles.container}>
-      <h1 className={styles.message}>Welcome to my personal website</h1>
-      <p className={styles.subMessage}>Content coming soon...</p>
-    </div>
+    <main className={styles.container}>
+      <WelcomeBanner />
+      <Presentation />
+      <TechPool />
+      <Contact />
+    </main>
   )
 }
-
-export default App
