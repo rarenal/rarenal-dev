@@ -1,10 +1,10 @@
 import styles from './WelcomeBanner.module.css'
-import { FujiBackground } from './FujiBackground'
+import { SphereBackground } from './SphereBackground'
 
 export const WelcomeBanner = () => {
   return (
     <section className={styles.container}>
-      <FujiBackground className={styles.background} />
+      <SphereBackground className={styles.background} />
       <div className={styles.overlay}>
         <div className={styles.content}>
           <h1 className={styles.title}>Welcome</h1>
