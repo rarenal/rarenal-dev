@@ -1,24 +1,76 @@
 .container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 85vh;
-  padding: 2rem;
 }
 
 .title {
-  font-size: clamp(2rem, 8vw, 4rem);
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(4rem, 16vw, 8rem);
   font-weight: 700;
   margin-bottom: 1rem;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-align: center;
 }
 
 .subtitle {
-  font-size: clamp(1rem, 3vw, 1.5rem);
-  color: #a0aec0;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.33rem, 5.33vw, 2.67rem);
+  font-weight: 600;
   text-align: center;
+  margin: 0;
+}
+
+.subtitleWhite {
+  color: #d1d5db;
+}
+
+.subtitleGradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (max-width: 768px) {
+  .overlay {
+    padding: 2rem;
+  }
 }
