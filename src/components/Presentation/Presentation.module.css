@@ -1,29 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
   width: 100%;
-  padding: 2rem;
-  background-color: #1e2433;
+  min-height: 100vh;
+  padding: 4rem;
+  background: #0a0e1a;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .title {
-  font-size: clamp(1.75rem, 6vw, 3rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin: 0 0 3rem 0;
   color: #e2e8f0;
+  font-family: 'Space Grotesk', sans-serif;
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.content {
-  max-width: 800px;
+.contentWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex: 1;
+}
+
+.textContainer {
+  background: transparent;
+  overflow: hidden;
+  max-width: 1000px;
   width: 100%;
 }
 
-.text {
-  font-size: clamp(1rem, 2.5vw, 1.25rem);
-  line-height: 1.8;
-  color: #cbd5e0;
-  text-align: center;
+/* Ensure SplitText line wrappers don't interfere with layout */
+.textContainer :global(.line) {
+  display: block;
+  overflow: visible;
+}
+
+.animatedText {
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+  line-height: 2;
+  color: #d1d5db;
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 400;
+}
+
+.animatedText p {
+  margin: 0 0 1.5rem 0;
+}
+
+.finalLine {
+  font-size: clamp(1.5rem, 2.8vw, 2rem);
+  font-weight: 600;
+  margin-top: 2rem !important;
+  color: #e2e8f0;
+}
+
+/* Highlight effects with different colors */
+.highlight1 {
+  background: rgba(130, 255, 173, 0.25);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #e2e8f0;
+  white-space: normal;
+  display: inline;
+}
+
+.highlight2 {
+  background: rgba(255, 231, 130, 0.25);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #e2e8f0;
+  white-space: normal;
+  display: inline;
+}
+
+.highlight3 {
+  background: rgba(255, 130, 231, 0.25);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #e2e8f0;
+  white-space: normal;
+  display: inline;
+}
+
+.highlight4 {
+  background: rgba(130, 200, 255, 0.25);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #e2e8f0;
+  white-space: normal;
+  display: inline;
+}
+
+.highlight5 {
+  background: rgba(255, 170, 130, 0.25);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #e2e8f0;
+  white-space: normal;
+  display: inline;
+}
+
+.highlight6 {
+  background: rgba(190, 130, 255, 0.25);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #e2e8f0;
+  white-space: normal;
+  display: inline;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 3rem 2rem;
+  }
+  
+  .textContainer {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
 }
