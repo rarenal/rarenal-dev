@@ -1,0 +1,65 @@
+.indicator {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dotsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #667eea;
+  opacity: 0.4;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.dot:hover {
+  transform: scale(1.2);
+  opacity: 0.7;
+}
+
+.dot.active {
+  opacity: 1;
+  transform: scale(1.5);
+}
+
+.line {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #475569 20%,
+    #475569 80%,
+    transparent
+  );
+  opacity: 0.3;
+}
+
+@media (max-width: 768px) {
+  .indicator {
+    right: 1rem;
+  }
+  
+  .dot {
+    width: 5px;
+    height: 5px;
+  }
+}
