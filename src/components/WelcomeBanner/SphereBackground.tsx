@@ -3,11 +3,11 @@ import * as THREE from 'three'
 import { createNoise3D } from 'simplex-noise'
 import { gsap } from 'gsap'
 
-interface FujiBackgroundProps {
+interface SphereBackgroundProps {
   className?: string
 }
 
-export const FujiBackground = ({ className }: FujiBackgroundProps) => {
+export const SphereBackground = ({ className }: SphereBackgroundProps) => {
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
